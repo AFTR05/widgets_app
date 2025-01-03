@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 const cards = <Map<String, dynamic>> [
@@ -35,7 +37,10 @@ class _CardsView extends StatelessWidget {
       child: Column(
         children: [
           ...cards.map ( (card) => _CardsType1(label: card['label'], elevation: card['elevation'])),
-          ...cards.map ( (card) => _CardsType2(label: card['label'], elevation: card['elevation']))
+          ...cards.map ( (card) => _CardsType2(label: card['label'], elevation: card['elevation'])),
+          ...cards.map ( (card) => _CardsType3(label: card['label'], elevation: card['elevation'])),
+          ...cards.map ( (card) => _CardsType4(label: card['label'], elevation: card['elevation'])),
+          const SizedBox(height: 50,)
         ],
       ),
     );
@@ -113,6 +118,86 @@ class _CardsType2 extends StatelessWidget {
             )
           ],
         ),
+      ),
+    );
+  }
+}
+
+
+class _CardsType3 extends StatelessWidget {
+  final String label;
+  final double elevation;
+
+  const _CardsType3({required this.label, required this.elevation});
+
+  @override
+  Widget build(BuildContext context) {
+    final colors =  Theme.of(context).colorScheme;
+
+    return Card(
+      color: colors.surfaceContainerHighest,
+      elevation: elevation,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(10,5,10,10),
+        child: Column(
+          children: [
+            Align(
+              alignment: Alignment.topRight,
+              child: IconButton(
+                icon: const Icon(Icons.more_vert_outlined),
+                onPressed: () {
+                  
+                },
+              )
+            ),
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: Text('$label - filled')
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+class _CardsType4 extends StatelessWidget {
+  final String label;
+  final double elevation;
+
+  const _CardsType4({required this.label, required this.elevation});
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Card(
+      clipBehavior: Clip.hardEdge,
+      elevation: elevation,
+      child: Stack(
+        children: [
+          Image.network(
+            'https://picsum.photos/id/${ elevation.toInt() }/600/350',
+            height: 350,
+            fit: BoxFit.cover,
+          ),
+      
+          Align(
+            alignment: Alignment.topRight,
+            child: Container(
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20))
+              ),
+              child: IconButton(
+                icon: const Icon(Icons.more_vert_outlined),
+                onPressed: () {
+                  
+                },
+              ),
+            )
+          ),
+        ],
       ),
     );
   }
