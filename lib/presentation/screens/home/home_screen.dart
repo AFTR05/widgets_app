@@ -15,6 +15,7 @@ class HomeScreen extends StatelessWidget {
         title: const Text('Flutter + Material 3')
       ),
       body: const _HomeView(),
+      drawer: Placeholder(),
     );
   }
 }
