@@ -5,6 +5,11 @@ import 'package:widgets_app/presentation/screens/screens.dart';
 final appRouter = GoRouter(
   routes: [
     GoRoute(
+      name: CounterScreen.name,
+      path: '/counter-river',
+      builder: (context, state) => const CounterScreen()
+    ),
+    GoRoute(
       name: HomeScreen.name,
       path: '/',
       builder: (context, state) => const HomeScreen()
