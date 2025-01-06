@@ -18,7 +18,7 @@ const appMenuItems = <MenuItem>[
   MenuItem(
     title: 'Riverpod Counter',
     subtitle: 'Introduccion a riverpod',
-    link: '/counter',
+    link: '/counter-river',
     icon: Icons.list_alt_rounded
   ),
   MenuItem(
