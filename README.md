@@ -1,4 +1,6 @@
-# Widgets App
+# <a href="https://flutter.dev/" target="_blank"> <img src="https://img.icons8.com/color/48/000000/flutter.png"/> </a> Widgets App 
+
+
 
 Welcome to Widgets App, a Flutter application designed specifically to explore, test, and practice with Flutter's wide range of widgets. This project is ideal for developers who want to learn, experiment, and enhance their Flutter skills.
 
