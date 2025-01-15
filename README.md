@@ -18,5 +18,5 @@ Test widgets in different UI scenarios and layouts to simulate real-world applic
 #### Well-Structured Codebase
 Organized code to facilitate learning and understanding best practices in Flutter development.
 
-##### Author
-- Andrés Felipe Toro Rendón
+### Author
+Andrés Felipe Toro Rendón
